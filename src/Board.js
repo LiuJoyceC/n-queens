@@ -50,6 +50,9 @@
       );
     },
 
+
+    // Extra Credit question: Time complexity is O(n^2), because of its components between
+    // the '||' operators each have complexities of O(n^2).
     hasAnyQueensConflicts: function() {
       return this.hasAnyRooksConflicts() || this.hasAnyMajorDiagonalConflicts() || this.hasAnyMinorDiagonalConflicts();
     },
