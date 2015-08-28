@@ -86,6 +86,20 @@ window.findNQueensSolution = function(n, all) {
           minor = minor^minorInd;
         }
       }
+      if (all && rowInd === 0) {
+        if (rowRep === (1<<(~~(n / 2) - 1))) {
+          console.log('found symmetry');
+          if (n % 2 === 0) {
+            count *= 2;
+            return;
+          }
+          var storage = count;
+        }
+        if (rowRep === (1<<(~~(n / 2)))) {
+          count += storage || 0;
+          return;
+        }
+      }
     }
     return false;
   };
